@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript Currency Convertor</title>
+    <style>
+        body {
+            background-image: url("pi-day-seamless-pattern-with-mathematical-constants-baked-pie-template-hand-drawn-illustration_2175-12164.avif");
+        }
+
+        .btn2 {
+            font-family: 'Ubuntu', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+            width: 132px;
+            background-color: #579fbd;
+            color: white;
+            border: 3px solid gray;
+            border-radius: 5px;
+            padding: 18px;
+            margin: 5px;
+            font-size: 15px;
+        }
+
+        .btn2:hover {
+            background-color: rgb(50, 154, 157);
+        }
+
+        .btn {
+            font-family: 'Ubuntu', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+            width: 293px;
+            background-color: #579fbd;
+            color: white;
+            border: 3px solid gray;
+            border-radius: 5px;
+            padding: 35px;
+            margin: 5px;
+            font-size: 20px;
+        }
+
+        .btn:hover {
+            background-color: rgb(50, 154, 157);
+        }
+
+        #calc {
+            font-family: 'Ubuntu', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+            width: 296.7px;
+            border-radius: 3px;
+            padding: 20px;
+        }
+
+        #calc::placeholder {
+            font-size: 15px;
+            color: white;
+        }
+
+        #calc1 {
+            font-family: 'Ubuntu', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+            width: 22px;
+            border-radius: 3px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #calc1::placeholder {
+            font-size: 18px;
+            color: white;
+        }
+
+        #clear {
+            font-family: 'Ubuntu', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+            width: 428px;
+            height: 58px;
+            border: 3px solid gray;
+            border-radius: 3px;
+            padding: 9px;
+            background-color: black;
+            margin-left: 4px;
+            margin-top: 4px;
+            font-size: 15px;
+            color: #f9f9f9;
+        }
+
+        #clear1 {
+            font-family: 'Ubuntu', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+            width: 284px;
+            height: 58px;
+            border: 3px solid gray;
+            border-radius: 3px;
+            padding: 9px;
+            background-color: #76a473;
+            margin: 7px;
+            font-size: 15px;
+            color: #f9f9f9;
+        }
+
+        #clear:hover {
+            background-color: rgb(59, 59, 59);
+        }
+
+        #clear1:hover {
+            background-color: #466a43;
+        }
+
+        .dropbtn {
+            font-family: 'Ubuntu', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+            background-color: green;
+            color: white;
+            border: 3px solid gray;
+            border-radius: 5px;
+            padding: 8px;
+            margin: 5px;
+            font-size: 15px;
+            width: 424px;
+        }
+
+        .dropdown {
+            margin: 200px;
+        }
+
+        .dropdown1 {
+            font-family: 'Ubuntu', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+            position: relative;
+            display: inline-block;
+            padding: 12px;
+            font-size: 16px;
+            margin-left: 5px;
+            margin-top: 3px;
+            margin-bottom: 3px;
+            width: 425px;
+            background-color: #70c4da;
+            color: white;
+            border: 3px solid gray;
+            border-radius: 5px;
+        }
+
+        .dropdown-content {
+            font-family: 'Ubuntu', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 430px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content option {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content option:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgb(4, 114, 4);
+        }
+
+        .submit {
+            background-color: #6fb5a9;
+        }
+
+        .submit:hover {
+            background-color: #7bc9bc;
+        }
+
+        select {
+            width: 400px;
+            padding: 3px;
+            font-family: 'Ubuntu';
+            font-size: 18px;
+            color: white;
+            background: green;
+            border: none;
+        }
+
+        #selection {
+            width: 250px;
+            color: white;
+        }
+
+        .formstyle {
+            width: 440px;
+            height: 483px;
+            margin-left: 5px;
+            border: 3px solid #939393;
+            border-radius: 5px;
+            background-color: #b3b3b3;
+            padding: 20px;
+        }
+
+        .formstyle2 {
+            width: 300px;
+            height: 508px;
+            margin: auto;
+            border: 3px solid #939393;
+            border-radius: 5px;
+            background-color: #b3b3b3;
+            padding: 20px;
+        }
+
+        input {
+            width: 57px;
+            background-color: #579fbd;
+            color: white;
+            border: 3px solid gray;
+            border-radius: 5px;
+            padding: 26px;
+            margin: 7px;
+            font-size: 15px;
+        }
+
+        #calc {
+            width: 237px;
+            border-radius: 3px;
+            padding: 20px;
+            margin: 7px;
+        }
+
+        #calc2 {
+            width: 295px;
+            border-radius: 3px;
+            padding: 20px;
+            margin: 7px;
+        }
+
+        #calc2::placeholder {
+            font-size: 18px;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="dropdown" id="myDropdown1">
+            <input type="button" class="btn" value="Simple Calculator" onclick="toggleCalculator()"><br>
+            <input type="button" class="btn" value="Currency Convertor" onclick="toggleCalculator()">
+        </div>
+        <div id="calcu">
+            <div class="formstyle2">
+                <form name="form2">
+                    <input id="calc" type="text" name="answer" placeholder="Enter the operation">
+                    <input type="button" value="1" onclick="form2.answer.value += '1'">
+                    <input type="button" value="2" onclick="form2.answer.value += '2'">
+                    <input type="button" value="3" onclick="form2.answer.value += '3'">
+                    <input type="button" value="+" onclick="form2.answer.value += '+'">
+
+                    <input type="button" value="4" onclick="form2.answer.value += '4'">
+                    <input type="button" value="5" onclick="form2.answer.value += '5'">
+                    <input type="button" value="6" onclick="form2.answer.value += '6'">
+                    <input type="button" value="-" onclick="form2.answer.value += '-'">
+
+                    <input type="button" value="7" onclick="form2.answer.value += '7'">
+                    <input type="button" value="8" onclick="form2.answer.value += '8'">
+                    <input type="button" value="9" onclick="form2.answer.value += '9'">
+                    <input type="button" value="*" onclick="form2.answer.value += '*'">
+
+                    <input type="button" value="/" onclick="form2.answer.value += '/'">
+                    <input type="button" value="0" onclick="form2.answer.value += '0'">
+                    <input type="button" value="." onclick="form2.answer.value += '.'">
+                    <input type="button" value="=" onclick="form2.answer.value = eval(form2.answer.value)">
+
+                    <input type="button" value="Clear All" onclick="form2.answer.value = ''" id="clear1">
+                </form>
+            </div>
+        </div>
+        <div id="Currency" style="display:none">
+            <div class="formstyle">
+                <form name="form1">
+                    <input id="calc1" type="text" name="answer1" class="btn2" placeholder="₹">
+                    <input id="calc2" type="text" name="answer" class="btn2" placeholder="Enter the value">
+                    <select class="dropdown1" id="myDropdown">
+                        <option value="1">US DOLLAR</option>
+                        <option value="2">EURO</option>
+                        <option value="3">CANADIAN DOLLAR</option>
+                        <option value="4">JAPANESE YEN</option>
+                        <option value="5">UAE DIRHAM</option>
+                        <option value="6">CHINESE YUAN</option>
+                        <option value="7">SRILANKAN RUPEE</option>
+                        <option value="8">MALAYSIAN RINGGIT</option>
+                        <option value="9">SOUTH AFRICAN RAND</option>
+                        <option value="0">AUSTRALIAN DOLLAR</option>
+                    </select>
+                    <input type="button" class="btn2" value="1" onclick="form1.answer.value += '1' ">
+                    <input type="button" class="btn2" value="2" onclick="form1.answer.value += '2' ">
+                    <input type="button" class="btn2" value="3" onclick="form1.answer.value += '3' ">
+                    <input type="button" class="btn2" value="4" onclick="form1.answer.value += '4' ">
+                    <input type="button" class="btn2" value="5" onclick="form1.answer.value += '5' ">
+                    <input type="button" class="btn2" value="6" onclick="form1.answer.value += '6' ">
+                    <input type="button" class="btn2" value="7" onclick="form1.answer.value += '7' ">
+                    <input type="button" class="btn2" value="8" onclick="form1.answer.value += '8' ">
+                    <input type="button" class="btn2" value="9" onclick="form1.answer.value += '9' ">
+                    <input type="button" class="btn2" value="0" onclick="form1.answer.value += '0' ">
+                    <input type="button" class="btn2" value="." onclick="form1.answer.value += '.' ">
+                    <input type="button" name="convert" class="btn2 submit" value="CONVERT"
+                        onclick="handleConvertClick()">
+                    <input type="button" value="Clear All" onclick="form1.answer1.value = '';form1.answer.value = ''"
+                        id="clear">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleCalculator() {
+            let Value = event.target.value;
+            console.log(Value);
+            if (Value == "Simple Calculator") {
+                document.getElementById("calcu").style.display = "block";
+                document.getElementById("Currency").style.display = "none";
+            } else {
+                document.getElementById("calcu").style.display = "none";
+                document.getElementById("Currency").style.display = "block";
+            }
+        }
+        function handleConvertClick() {
+            let selectedValue = document.getElementById("myDropdown").value;
+            if (selectedValue == 1) {
+                form1.answer1.value = '$';
+                form1.answer.value /= 82.90;
+            }
+            else if (selectedValue == 2) {
+                form1.answer1.value = '€';
+                form1.answer.value /= 89.68;
+            }
+            else if (selectedValue == 3) {
+                form1.answer1.value = 'C$';
+                form1.answer.value /= 61.34;
+            }
+            else if (selectedValue == 4) {
+                form1.answer1.value = 'JP¥';
+                form1.answer.value *= 1.81;
+            }
+            else if (selectedValue == 5) {
+                form1.answer1.value = 'د.إ';
+                form1.answer.value /= 22.57;
+            }
+            else if (selectedValue == 6) {
+                form1.answer1.value = '¥';
+                form1.answer.value /= 11.53;
+            }
+            else if (selectedValue == 7) {
+                form1.answer1.value = 'රු';
+                form1.answer.value *= 3.76;
+            }
+            else if (selectedValue == 8) {
+                form1.answer1.value = 'RM';
+                form1.answer.value /= 17.34;
+            }
+            else if (selectedValue == 9) {
+                form1.answer1.value = 'R';
+                form1.answer.value /= 4.38;
+            }
+            else {
+                form1.answer1.value = 'A$';
+                form1.answer.value /= 54.40;
+            }
+        }
+    </script>
+</body>
+
+</html>
